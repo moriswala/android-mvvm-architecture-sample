@@ -163,7 +163,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="SAR 600.00"
                                 android:textAlignment="textEnd"
-                                android:textColor="#f5a622"
+                                android:textColor="@color/colorAccent"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
@@ -175,7 +175,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="1 hour, 30 minutes"
                                 android:textAlignment="textEnd"
-                                android:textColor="#b3b3b3" />
+                                android:textColor="@color/silver" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -245,7 +245,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="SAR 560.00"
                                 android:textAlignment="textEnd"
-                                android:textColor="#f5a622"
+                                android:textColor="@color/colorAccent"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
@@ -257,7 +257,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="1 hour, 30 minutes"
                                 android:textAlignment="textEnd"
-                                android:textColor="#b3b3b3" />
+                                android:textColor="@color/silver" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -339,7 +339,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="1 hour, 30 minutes"
                                 android:textAlignment="textEnd"
-                                android:textColor="#b3b3b3" />
+                                android:textColor="@color/silver" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -409,7 +409,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="SAR 375.00"
                                 android:textAlignment="textEnd"
-                                android:textColor="#f5a622"
+                                android:textColor="@color/colorAccent"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
@@ -421,7 +421,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="1 hour, 30 minutes"
                                 android:textAlignment="textEnd"
-                                android:textColor="#b3b3b3" />
+                                android:textColor="@color/silver" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -491,7 +491,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="SAR 700.00"
                                 android:textAlignment="textEnd"
-                                android:textColor="#f5a622"
+                                android:textColor="@color/colorAccent"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
@@ -503,7 +503,7 @@
                                 android:fontFamily="@font/calibri"
                                 android:text="1 hour, 30 minutes"
                                 android:textAlignment="textEnd"
-                                android:textColor="#b3b3b3" />
+                                android:textColor="@color/silver" />
                         </LinearLayout>
 
                     </LinearLayout>
