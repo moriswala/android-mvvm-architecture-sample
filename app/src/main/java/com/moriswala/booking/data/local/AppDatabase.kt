@@ -4,12 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.moriswala.booking.data.entities.Character
+import com.moriswala.booking.data.entities.Booking
+import com.moriswala.booking.data.entities.City
+import com.moriswala.booking.data.entities.Flight
 
-@Database(entities = [Character::class], version = 1, exportSchema = false)
+@Database(entities = [Booking::class, Flight::class, City::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun characterDao(): CharacterDao
+    abstract fun bookingDao(): BookingDao
+
+    abstract fun flightDao(): FlightDao
+
+    abstract fun cityDao(): CityDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

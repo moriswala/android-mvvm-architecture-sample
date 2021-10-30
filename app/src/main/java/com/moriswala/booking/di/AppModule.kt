@@ -3,12 +3,12 @@ package com.moriswala.booking.di
 import android.content.Context
 import com.google.firebase.auth.FirebaseAuth
 import com.moriswala.booking.data.local.AppDatabase
-import com.moriswala.booking.data.local.CharacterDao
-import com.moriswala.booking.data.remote.CharacterRemoteDataSource
-import com.moriswala.booking.data.remote.CharacterService
-import com.moriswala.booking.data.repository.CharacterRepository
+import com.moriswala.booking.data.local.BookingDao
+import com.moriswala.booking.data.remote.BookingRemoteDataSource
+import com.moriswala.booking.data.repository.BookingRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.moriswala.booking.data.remote.BookingService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +25,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson) : Retrofit = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api/")
+        .baseUrl("https://my-booking-project.herokuapp.com/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
@@ -37,11 +37,11 @@ object AppModule {
     fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
 
     @Provides
-    fun provideCharacterService(retrofit: Retrofit): CharacterService = retrofit.create(CharacterService::class.java)
+    fun provideBookingService(retrofit: Retrofit): BookingService = retrofit.create(BookingService::class.java)
 
     @Singleton
     @Provides
-    fun provideCharacterRemoteDataSource(characterService: CharacterService) = CharacterRemoteDataSource(characterService)
+    fun provideBookingRemoteDataSource(bookingService: BookingService) = BookingRemoteDataSource(bookingService)
 
     @Singleton
     @Provides
@@ -49,11 +49,19 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideCharacterDao(db: AppDatabase) = db.characterDao()
+    fun provideBookingDao(db: AppDatabase) = db.bookingDao()
 
     @Singleton
     @Provides
-    fun provideRepository(remoteDataSource: CharacterRemoteDataSource,
-                          localDataSource: CharacterDao) =
-        CharacterRepository(remoteDataSource, localDataSource)
+    fun provideFlightDao(db: AppDatabase) = db.flightDao()
+
+    @Singleton
+    @Provides
+    fun provideCityDao(db: AppDatabase) = db.cityDao()
+
+    @Singleton
+    @Provides
+    fun provideRepository(remoteDataSource: BookingRemoteDataSource,
+                          localDataSource: BookingDao) =
+        BookingRepository(remoteDataSource, localDataSource)
 }

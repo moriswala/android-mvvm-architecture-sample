@@ -28,9 +28,8 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/species_and_status"
+        android:id="@+id/fromTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -38,4 +37,13 @@
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/name" />
+    <TextView
+        android:id="@+id/departTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/fromTo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

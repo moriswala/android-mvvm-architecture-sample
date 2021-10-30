@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@id/image" />
 
         <TextView
-            android:id="@+id/species_text"
+            android:id="@+id/fromCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
-            android:id="@+id/species"
+            android:id="@+id/toCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -65,44 +65,56 @@
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
-            android:id="@+id/status_text"
+            android:id="@+id/departTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="Status:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/species_text" />
+            app:layout_constraintTop_toBottomOf="@+id/fromCity" />
 
         <TextView
-            android:id="@+id/status"
+            android:id="@+id/arrivalTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/species" />
+            app:layout_constraintTop_toBottomOf="@+id/toCity" />
 
         <TextView
-            android:id="@+id/gender_text"
+            android:id="@+id/noOfStops"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="Gender:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/status_text" />
+            app:layout_constraintTop_toBottomOf="@+id/departTime" />
 
         <TextView
-            android:id="@+id/gender"
+            android:id="@+id/noOfStopsValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/status" />
+            app:layout_constraintTop_toBottomOf="@+id/arrivalTime" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_extra"
+            tools:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noOfStopsValue" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

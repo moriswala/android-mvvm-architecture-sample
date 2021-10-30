@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
-import com.moriswala.booking.data.entities.Character
+import com.moriswala.booking.data.entities.Booking
 import com.moriswala.booking.databinding.CharacterDetailFragmentBinding
 import com.moriswala.booking.utils.Resource
 import com.moriswala.booking.utils.autoCleared
@@ -42,7 +40,7 @@ class CharacterDetailFragment : BaseFragment() {
     }
 
     private fun setupObservers() {
-        viewModel.character.observe(viewLifecycleOwner, Observer {
+        viewModel.booking.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     bindCharacter(it.data!!)
@@ -61,14 +59,17 @@ class CharacterDetailFragment : BaseFragment() {
         })
     }
 
-    private fun bindCharacter(character: Character) {
-        binding.name.text = character.name
-        binding.species.text = character.species
-        binding.status.text = character.status
-        binding.gender.text = character.gender
-        Glide.with(binding.root)
-            .load(character.image)
-            .transform(CircleCrop())
-            .into(binding.image)
+    private fun bindCharacter(booking: Booking) {
+        binding.name.text = booking.owner
+        binding.fromCity.text = booking.depart_city_id
+        binding.status.text = booking.arrival_city_id
+        binding.departTime.text = booking.depart_date_time
+        binding.arrivalTime.text = booking.arrival_date_time
+        binding.noOfStopsValue.text = booking.stops.toString()
+        binding.status.text = if(booking.status==1) "APPROVED" else "PENDING"
+//        Glide.with(binding.root)
+//            .load(character.image)
+//            .transform(CircleCrop())
+//            .into(binding.image)
     }
 }
