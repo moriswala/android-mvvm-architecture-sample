@@ -1,6 +1,7 @@
 package com.moriswala.booking.di
 
 import android.content.Context
+import com.google.firebase.auth.FirebaseAuth
 import com.moriswala.booking.data.local.AppDatabase
 import com.moriswala.booking.data.local.CharacterDao
 import com.moriswala.booking.data.remote.CharacterRemoteDataSource
@@ -30,6 +31,10 @@ object AppModule {
 
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
+
+    @Singleton
+    @Provides
+    fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
 
     @Provides
     fun provideCharacterService(retrofit: Retrofit): CharacterService = retrofit.create(CharacterService::class.java)

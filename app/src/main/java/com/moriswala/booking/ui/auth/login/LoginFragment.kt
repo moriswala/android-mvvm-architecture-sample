@@ -1,6 +1,5 @@
-package com.moriswala.booking.ui.auth
+package com.moriswala.booking.ui.auth.login
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
@@ -10,23 +9,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.viewModels
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseAuth
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.FragmentLoginBinding
-import com.moriswala.booking.databinding.FragmentSuccessBinding
 import com.moriswala.booking.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment() {
 
     override fun getLayoutResId(): Int = R.layout.fragment_login
-
-    private lateinit var auth: FirebaseAuth
     private var binding: FragmentLoginBinding by autoCleared()
-
+    private val viewModel: LoginViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,14 +36,7 @@ class LoginFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         hideToolbar()
-        //Get Firebase auth instance
 
-        //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance()
-
-        if (auth.currentUser != null) {
-            gotoHomeFragment()
-        }
         binding.checkbox.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { compoundButton, value ->
             if (value) {
                 // Show Password
@@ -81,7 +71,7 @@ class LoginFragment : BaseFragment() {
             binding.progressBar.visibility = View.VISIBLE
 
             //authenticate user
-            auth.signInWithEmailAndPassword(email, password)
+            viewModel.auth().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult?> { task ->
                         // If sign in fails, display a message to the user. If sign in succeeds

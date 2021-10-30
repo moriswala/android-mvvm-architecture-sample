@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.characters
+package com.moriswala.booking.ui.auth.resetpassword
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
@@ -10,12 +10,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Singleton
 
-class CharactersViewModel @ViewModelInject constructor(
-    private val repository: CharacterRepository,
+class ResetPasswordViewModel @ViewModelInject constructor(
     private val auth: FirebaseAuth
 ) : ViewModel() {
-
-    val characters = repository.getCharacters()
 
     fun auth() = auth
 

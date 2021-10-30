@@ -8,14 +8,19 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
+import com.moriswala.booking.data.local.CharacterDao
+import com.moriswala.booking.data.remote.CharacterRemoteDataSource
 import com.moriswala.booking.databinding.CharactersFragmentBinding
+import com.moriswala.booking.ui.characters.CharactersAdapter
+import com.moriswala.booking.ui.characters.CharactersViewModel
 import com.moriswala.booking.utils.Resource
 import com.moriswala.booking.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListener {
@@ -40,6 +45,10 @@ class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListen
         setupRecyclerView()
         setupObservers()
         hideToolbar()
+        binding.btnLogout.setOnClickListener{
+            viewModel.auth().signOut()
+            getNavController().navigate(R.id.action_charactersFragment_to_loginFragment)
+        }
         binding.issueNewTicketFab.setOnClickListener{
             getNavController().navigate(R.id.action_charactersFragment_to_newTicketFramgnet)
         }

@@ -13,7 +13,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainViewModel @ViewModelInject constructor(
-    private val repository: CharacterRepository
+    private val auth: FirebaseAuth
 ) : ViewModel() {
 
+    fun auth() = auth
 }

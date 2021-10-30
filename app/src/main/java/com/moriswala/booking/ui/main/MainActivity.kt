@@ -3,10 +3,10 @@ package com.moriswala.booking.ui.main
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.ActivityMainBinding
@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private var authListener: AuthStateListener? = null
-    private var auth: FirebaseAuth? = null
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,20 +36,18 @@ class MainActivity : AppCompatActivity() {
 //        val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(navController.graph)
 //        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
-        //get firebase auth instance
-        auth = FirebaseAuth.getInstance()
-
         //get current user
-        val user = auth?.currentUser
+        val user = viewModel.auth().currentUser
         if (user == null) {
             redirectToLogin(navController)
-        }
-        authListener = AuthStateListener { firebaseAuth ->
-            val user = firebaseAuth.currentUser
-            if (user == null) {
-                // user auth state is changed - user is null
-                // launch login activity
-                redirectToLogin(navController)
+        }else {
+            authListener = AuthStateListener { firebaseAuth ->
+                val user = firebaseAuth.currentUser
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    redirectToLogin(navController)
+                }
             }
         }
 

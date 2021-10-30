@@ -14,7 +14,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.FragmentTabsBinding
-import com.moriswala.booking.ui.newticket.NewTicketFragment
 import com.moriswala.booking.ui.characters.CharactersFragment
 import com.moriswala.booking.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
