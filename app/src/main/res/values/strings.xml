@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Booking</string>
+    <string name="request_ticket">Request ticket</string>
+    <string name="pending_requests">Pending requests</string>
+    <string name="request_new_ticket">Request new ticket</string>
+    <string name="new_ticket">New ticket</string>
+    <string name="findFlights">Find flights</string>
+    <string name="confirmSeat">Confirm seat</string>
+    <string name="booking_success_msg">You booking request sent successfully.</string>
+    <string name="done">Done</string>
+    <string name="all_requests">All Booking requests</string>
+    <string name="flightDetails">Flight details</string>
+    <string name="select_flight">Select your flight!</string>
+</resources>
