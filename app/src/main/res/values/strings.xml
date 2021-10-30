@@ -11,4 +11,19 @@
     <string name="all_requests">All Booking requests</string>
     <string name="flightDetails">Flight details</string>
     <string name="select_flight">Select your flight!</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Your password</string>
+    <string name="btn_login">Log in</string>
+    <string name="btn_forgot_password">Forgot password</string>
+    <string name="btn_link_to_register">New Registration</string>
+    <string name="signin">Authentication</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="action_sign_in_short">Sign up now</string>
+    <string name="btn_link_to_login">Already registered. Login here</string>
+    <string name="reset_password_info">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="btn_reset_password">Reset password</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="minimum_password">Password is weak</string>
+    <string name="auth_failed">Login failed</string>
 </resources>

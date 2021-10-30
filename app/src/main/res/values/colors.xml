@@ -13,4 +13,6 @@
     <color name="colorPrimaryLightDisabled">#16A632FF</color>
     <color name="palePurple">#AC89C7</color>
     <color name="silver">#b3b3b3</color>
+    <color name="signin">#24649F</color>
+    <color name="translucent">#33000000</color>
 </resources>

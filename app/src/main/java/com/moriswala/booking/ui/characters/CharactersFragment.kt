@@ -41,7 +41,7 @@ class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListen
         setupObservers()
         hideToolbar()
         binding.issueNewTicketFab.setOnClickListener{
-            findNavController().navigate(R.id.action_charactersFragment_to_newTicketFramgnet)
+            getNavController().navigate(R.id.action_charactersFragment_to_newTicketFramgnet)
         }
     }
 
@@ -68,7 +68,7 @@ class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListen
     }
 
     override fun onClickedCharacter(characterId: Int) {
-        findNavController().navigate(
+        getNavController().navigate(
             R.id.action_charactersFragment_to_characterDetailFragment,
             bundleOf("id" to characterId)
         )

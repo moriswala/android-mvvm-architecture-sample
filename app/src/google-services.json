@@ -1,0 +1,164 @@
+{
+  "project_info": {
+    "project_number": "512865473261",
+    "firebase_url": "https://firestoretest-3e32a.firebaseio.com",
+    "project_id": "firestoretest-3e32a",
+    "storage_bucket": "firestoretest-3e32a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512865473261:android:c0e6c9dec1cee7bc97f2e4",
+        "android_client_info": {
+          "package_name": "com.app.messio.messio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHVa058D1XD01sGzdMckM-fHvMuRzf0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512865473261:android:4a7a4fe0270029b197f2e4",
+        "android_client_info": {
+          "package_name": "com.moriswala.booking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512865473261-n2faf2lba9oiojrmqtmiul1cf1g1dpj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moriswala.booking",
+            "certificate_hash": "1e299b790a0b7496e42eee776c662c5669ac1583"
+          }
+        },
+        {
+          "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHVa058D1XD01sGzdMckM-fHvMuRzf0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512865473261:android:ce1b46547f727620",
+        "android_client_info": {
+          "package_name": "com.moriswala.fireeats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHVa058D1XD01sGzdMckM-fHvMuRzf0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512865473261:android:3e9e6a50b186a622",
+        "android_client_info": {
+          "package_name": "com.moriswala.globalprojects.ccdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHVa058D1XD01sGzdMckM-fHvMuRzf0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512865473261:android:f9da4065911b498797f2e4",
+        "android_client_info": {
+          "package_name": "com.moriswala.iottest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHVa058D1XD01sGzdMckM-fHvMuRzf0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512865473261-kbjjf3v1aa21eub1qkvrdg0gvfbedvtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

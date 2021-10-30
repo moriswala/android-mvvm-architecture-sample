@@ -1,17 +1,13 @@
-package com.moriswala.booking.ui
+package com.moriswala.booking.ui.main
 
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup.MarginLayoutParams
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,6 +15,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    private var authListener: AuthStateListener? = null
+    private var auth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,14 +36,26 @@ class MainActivity : AppCompatActivity() {
 //        val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(navController.graph)
 //        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
+        //get firebase auth instance
+        auth = FirebaseAuth.getInstance()
+
+        //get current user
+        val user = auth?.currentUser
+        if (user == null) {
+            redirectToLogin(navController)
+        }
+        authListener = AuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user == null) {
+                // user auth state is changed - user is null
+                // launch login activity
+                redirectToLogin(navController)
+            }
+        }
+
     }
 
-    protected fun setOnApplyWindowInsetsListener(root: View) {
-        ViewCompat.setOnApplyWindowInsetsListener(root) { v: View?, insets: WindowInsetsCompat ->
-            (root.layoutParams as MarginLayoutParams).bottomMargin =
-                insets.systemWindowInsetBottom
-            root.requestLayout()
-            insets.consumeSystemWindowInsets()
-        }
+    private fun redirectToLogin(navController: NavController) {
+        navController.navigate(R.id.loginFragment)
     }
 }
