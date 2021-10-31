@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.characters
+package com.moriswala.booking.ui.bookings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,26 +11,26 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
-import com.moriswala.booking.databinding.CharactersFragmentBinding
+import com.moriswala.booking.databinding.BookingsFragmentBinding
 import com.moriswala.booking.utils.Resource
 import com.moriswala.booking.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListener {
+class BookingsFragment : BaseFragment(), BookingsAdapter.ItemListener {
 
-    override fun getLayoutResId(): Int = R.layout.characters_fragment
+    override fun getLayoutResId(): Int = R.layout.bookings_fragment
 
-    private var binding: CharactersFragmentBinding by autoCleared()
-    private val viewModel: CharactersViewModel by viewModels()
-    private lateinit var adapter: CharactersAdapter
+    private var binding: BookingsFragmentBinding by autoCleared()
+    private val viewModel: BookingsViewModel by viewModels()
+    private lateinit var adapter: BookingsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val view = super.onCreateView(inflater, container, savedInstanceState)
-        binding = CharactersFragmentBinding.bind(view)
+        binding = BookingsFragmentBinding.bind(view)
         return binding.root
     }
 
@@ -49,7 +49,7 @@ class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListen
     }
 
     private fun setupRecyclerView() {
-        adapter = CharactersAdapter(this)
+        adapter = BookingsAdapter(this)
         binding.charactersRv.layoutManager = LinearLayoutManager(requireContext())
         binding.charactersRv.adapter = adapter
     }
@@ -70,10 +70,10 @@ class CharactersFragment : BaseFragment(), CharactersAdapter.CharacterItemListen
         })
     }
 
-    override fun onClickedCharacter(characterId: Int) {
+    override fun onBookingClicked(bookingId: Int) {
         getNavController().navigate(
             R.id.action_charactersFragment_to_characterDetailFragment,
-            bundleOf("id" to characterId)
+            bundleOf("id" to bookingId)
         )
     }
 }

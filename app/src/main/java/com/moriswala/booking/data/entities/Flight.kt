@@ -14,5 +14,6 @@ data class Flight(
     val owner: String,
     val stops: Int,
     val fare: String,
+    val logo: String,
     val currency: String
 )

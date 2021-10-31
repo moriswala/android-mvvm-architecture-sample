@@ -19,6 +19,6 @@ class BookingRepository @Inject constructor(
     fun getAllBookings() = performGetOperation(
         databaseQuery = { localDataSource.getAllBookings() },
         networkCall = { remoteDataSource.getAllBookings() },
-        saveCallResult = { localDataSource.insertAll(it.results) }
+        saveCallResult = { localDataSource.insertAll(it) }
     )
 }

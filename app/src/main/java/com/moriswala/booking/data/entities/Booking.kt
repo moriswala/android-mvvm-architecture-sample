@@ -15,5 +15,6 @@ data class Booking(
     val stops: Int,
     val fare: String,
     val currency: String,
+    val logo: String,
     val status: Int
 )

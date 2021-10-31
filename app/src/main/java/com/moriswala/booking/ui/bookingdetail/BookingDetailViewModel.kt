@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.characterdetail
+package com.moriswala.booking.ui.bookingdetail
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -9,7 +9,7 @@ import com.moriswala.booking.data.entities.Booking
 import com.moriswala.booking.data.repository.BookingRepository
 import com.moriswala.booking.utils.Resource
 
-class CharacterDetailViewModel @ViewModelInject constructor(
+class BookingDetailViewModel @ViewModelInject constructor(
     private val repository: BookingRepository
 ) : ViewModel() {
 

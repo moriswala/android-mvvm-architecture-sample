@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.FragmentTabsBinding
-import com.moriswala.booking.ui.characters.CharactersFragment
+import com.moriswala.booking.ui.bookings.BookingsFragment
 import com.moriswala.booking.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -33,8 +33,8 @@ class TabsFragment : Fragment() {
     private fun intiFragmentsList(): ArrayList<Fragment> {
 
         var marketFragments = ArrayList<Fragment>()
-        marketFragments.add(CharactersFragment())
-        marketFragments.add(CharactersFragment())
+        marketFragments.add(BookingsFragment())
+        marketFragments.add(BookingsFragment())
         return marketFragments
     }
 

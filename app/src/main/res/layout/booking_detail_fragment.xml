@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.characterdetail.CharacterDetailFragment">
+    tools:context=".ui.bookingdetail.BookingDetailFragment">
 
     <FrameLayout
         app:layout_constraintTop_toTopOf="parent"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
-            android:text="Gender:"
+            android:text="@string/no_stops"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/departTime" />
 

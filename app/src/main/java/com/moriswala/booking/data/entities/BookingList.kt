@@ -1,6 +1,5 @@
-package com.moriswala.booking.data.entities
-
-data class BookingList(
-    val info: Info,
-    val results: List<Booking>
-)
+//package com.moriswala.booking.data.entities
+//
+//data class BookingList(
+//    val results: List<Booking>
+//)

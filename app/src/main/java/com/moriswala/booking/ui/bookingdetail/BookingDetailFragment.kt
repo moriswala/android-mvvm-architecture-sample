@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.characterdetail
+package com.moriswala.booking.ui.bookingdetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,28 +7,29 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
 import com.moriswala.booking.data.entities.Booking
-import com.moriswala.booking.databinding.CharacterDetailFragmentBinding
+import com.moriswala.booking.databinding.BookingDetailFragmentBinding
 import com.moriswala.booking.utils.Resource
 import com.moriswala.booking.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CharacterDetailFragment : BaseFragment() {
+class BookingDetailFragment : BaseFragment() {
 
-    override fun getLayoutResId(): Int = R.layout.character_detail_fragment
+    override fun getLayoutResId(): Int = R.layout.booking_detail_fragment
 
-    private var binding: CharacterDetailFragmentBinding by autoCleared()
-    private val viewModel: CharacterDetailViewModel by viewModels()
+    private var binding: BookingDetailFragmentBinding by autoCleared()
+    private val viewModel: BookingDetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val view = super.onCreateView(inflater, container, savedInstanceState)
-        binding = CharacterDetailFragmentBinding.bind(view)
+        binding = BookingDetailFragmentBinding.bind(view)
         return binding.root
     }
 
@@ -62,14 +63,14 @@ class CharacterDetailFragment : BaseFragment() {
     private fun bindCharacter(booking: Booking) {
         binding.name.text = booking.owner
         binding.fromCity.text = booking.depart_city_id
+        binding.toCity.text = booking.arrival_city_id
         binding.status.text = booking.arrival_city_id
         binding.departTime.text = booking.depart_date_time
         binding.arrivalTime.text = booking.arrival_date_time
-        binding.noOfStopsValue.text = booking.stops.toString()
+        binding.noOfStopsValue.text = if(booking.stops>0) "non stops" else "${booking.stops} stops"
         binding.status.text = if(booking.status==1) "APPROVED" else "PENDING"
-//        Glide.with(binding.root)
-//            .load(character.image)
-//            .transform(CircleCrop())
-//            .into(binding.image)
+        Glide.with(binding.root)
+            .load(booking.logo)
+            .into(binding.image)
     }
 }
