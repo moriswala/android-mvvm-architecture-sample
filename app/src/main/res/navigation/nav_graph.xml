@@ -97,7 +97,7 @@
         tools:layout="@layout/booking_detail_fragment" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.moriswala.booking.ui.auth.login.LoginFragment"
+        android:name="com.moriswala.booking.ui.auth.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -127,7 +127,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.moriswala.booking.ui.auth.registeration.RegistrationFragment"
+        android:name="com.moriswala.booking.ui.auth.RegistrationFragment"
         android:label="RegistrationFragment"
         tools:layout="@layout/fragment_registeration" >
         <action
@@ -142,7 +142,7 @@
 
     <fragment
         android:id="@+id/resetPsswordFragment"
-        android:name="com.moriswala.booking.ui.auth.resetpassword.ResetPasswordFragment"
+        android:name="com.moriswala.booking.ui.auth.ResetPasswordFragment"
         android:label="ResetPasswordFragment"
         tools:layout="@layout/fragment_reset_password" />
 </navigation>

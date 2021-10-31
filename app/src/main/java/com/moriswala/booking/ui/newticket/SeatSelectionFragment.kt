@@ -9,7 +9,9 @@ import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.FragmentSeatSelectionBinding
 import com.moriswala.booking.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SeatSelectionFragment : BaseFragment() {
 
     override fun getLayoutResId(): Int = R.layout.fragment_seat_selection

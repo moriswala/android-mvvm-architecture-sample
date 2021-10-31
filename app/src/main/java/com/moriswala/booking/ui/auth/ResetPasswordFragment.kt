@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.auth.resetpassword
+package com.moriswala.booking.ui.auth
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -19,7 +19,7 @@ class ResetPasswordFragment : BaseFragment() {
 
     override fun getLayoutResId(): Int = R.layout.fragment_reset_password
 
-    private val viewModel: ResetPasswordViewModel by viewModels()
+    private val viewModel: AuthViewModel by viewModels()
     private var binding: FragmentResetPasswordBinding by autoCleared()
 
     override fun onCreateView(

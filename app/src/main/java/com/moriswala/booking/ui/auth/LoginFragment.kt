@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.auth.login
+package com.moriswala.booking.ui.auth
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -15,6 +15,7 @@ import com.google.firebase.auth.AuthResult
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
 import com.moriswala.booking.databinding.FragmentLoginBinding
+import com.moriswala.booking.ui.auth.AuthViewModel
 import com.moriswala.booking.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,7 +24,7 @@ class LoginFragment : BaseFragment() {
 
     override fun getLayoutResId(): Int = R.layout.fragment_login
     private var binding: FragmentLoginBinding by autoCleared()
-    private val viewModel: LoginViewModel by viewModels()
+    private val viewModel: AuthViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

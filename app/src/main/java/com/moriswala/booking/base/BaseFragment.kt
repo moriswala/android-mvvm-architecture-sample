@@ -17,6 +17,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.moriswala.booking.BuildConfig
 import com.moriswala.booking.databinding.FragmentBaseToolbarBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_base_toolbar.view.*
 
 abstract class BaseFragment : Fragment() {

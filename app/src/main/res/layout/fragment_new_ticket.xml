@@ -34,24 +34,23 @@
                         android:src="@drawable/ic_flight_up" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/greetingText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="Hey Shanky!"
-                        android:textStyle="bold"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
-                        android:textSize="32sp" />
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView"
+                        android:layout_below="@+id/greetingText"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/gotham"
                         android:text="Where you want to go."

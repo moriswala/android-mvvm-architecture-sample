@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.auth.registeration
+package com.moriswala.booking.ui.auth
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -21,7 +21,7 @@ class RegistrationFragment : BaseFragment() {
     override fun getLayoutResId(): Int = R.layout.fragment_registeration
 
     private var binding: FragmentRegisterationBinding by autoCleared()
-    private val viewModel: RegisterationViewModel by viewModels()
+    private val viewModel: AuthViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
