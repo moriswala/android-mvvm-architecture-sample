@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,7 +39,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="Select your bus!"
+                        android:text="@string/select_seat"
+                        android:textStyle="bold"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -53,6 +55,7 @@
                         android:weightSum="100">
 
                         <TextView
+                            android:id="@+id/fromCity"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
@@ -70,6 +73,7 @@
                             android:src="@drawable/ic_swap_horiz_white_24dp" />
 
                         <TextView
+                            android:id="@+id/toCity"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
@@ -83,13 +87,14 @@
 
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/departDateAndDay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linearLayout"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="12th - Nov - 2021 | Tuesday"
+                        android:text="21 - Nov - 2021 | Sunday"
+                        android:textStyle="bold"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -98,7 +103,7 @@
                         android:id="@+id/cardView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView3"
+                        android:layout_below="@+id/departDateAndDay"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="24dp"
                         android:layout_marginRight="8dp"
@@ -122,6 +127,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/departTime"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
@@ -130,6 +136,16 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/arrivalTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/calibri"
+                                    android:text="9:00AM - 10:30AM"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/airlineName"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
@@ -140,6 +156,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/noOfStops"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
@@ -156,6 +173,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/priceText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
@@ -166,6 +184,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/durationTime"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"

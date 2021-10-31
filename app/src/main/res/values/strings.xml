@@ -28,4 +28,6 @@
     <string name="auth_failed">Login failed</string>
     <string name="no_stops">No of stops</string>
     <string name="greet_name">Hey %1$s</string>
+    <string name="currency">SAR</string>
+    <string name="select_seat">Select your seat!</string>
 </resources>

@@ -1,7 +1,8 @@
 package com.moriswala.booking.data.repository
 
 import com.moriswala.booking.data.local.BookingDao
-import com.moriswala.booking.data.remote.BookingRemoteDataSource
+import com.moriswala.booking.data.remote.booking.BookingRemoteDataSource
+import com.moriswala.booking.data.remote.booking.FlightRemoteDataSource
 import com.moriswala.booking.utils.performGetOperation
 import javax.inject.Inject
 

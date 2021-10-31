@@ -1,4 +1,4 @@
-package com.moriswala.booking.ui.bookings
+package com.moriswala.booking.ui.newticket.flightselection
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,53 +9,48 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.moriswala.booking.base.BaseFragment
 import com.moriswala.booking.R
-import com.moriswala.booking.databinding.BookingsFragmentBinding
+import com.moriswala.booking.data.entities.Flight
+import com.moriswala.booking.databinding.FragmentFlightSelectionBinding
 import com.moriswala.booking.utils.Resource
 import com.moriswala.booking.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BookingsFragment : BaseFragment(), BookingsAdapter.ItemListener {
+class FlightSelectionFragment : BaseFragment(), FlightsAdapter.ItemListener {
 
-    override fun getLayoutResId(): Int = R.layout.bookings_fragment
+    override fun getLayoutResId(): Int = R.layout.fragment_flight_selection
 
-    private var binding: BookingsFragmentBinding by autoCleared()
-    private val viewModel: BookingsViewModel by viewModels()
-    private lateinit var adapter: BookingsAdapter
+    private lateinit var adapter: FlightsAdapter
+    private var binding: FragmentFlightSelectionBinding by autoCleared()
+    private val viewModel: FlightSelectionViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val view = super.onCreateView(inflater, container, savedInstanceState)
-        binding = BookingsFragmentBinding.bind(view)
+        binding = FragmentFlightSelectionBinding.bind(view)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        hideToolbar()
+        setToolbarColor(R.color.colorPrimary, R.color.color_master_light)
         setupRecyclerView()
         setupObservers()
-        binding.btnLogout.setOnClickListener{
-            viewModel.auth().signOut()
-            getNavController().navigate(R.id.action_charactersFragment_to_loginFragment)
-        }
-        binding.issueNewTicketFab.setOnClickListener{
-            getNavController().navigate(R.id.action_charactersFragment_to_newTicketFramgnet)
-        }
     }
 
     private fun setupRecyclerView() {
-        adapter = BookingsAdapter(this)
-        binding.bookingRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.bookingRecyclerView.adapter = adapter
+        adapter = FlightsAdapter(this)
+        binding.flightsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.flightsRecyclerView.adapter = adapter
     }
 
     private fun setupObservers() {
-        viewModel.bookings.observe(viewLifecycleOwner, Observer {
+        viewModel.flights.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
@@ -70,10 +65,12 @@ class BookingsFragment : BaseFragment(), BookingsAdapter.ItemListener {
         })
     }
 
-    override fun onBookingClicked(bookingId: Int) {
-        getNavController().navigate(
-            R.id.action_charactersFragment_to_characterDetailFragment,
-            bundleOf("id" to bookingId)
-        )
+    override fun onFlightSelected(flight: Flight) {
+//        getNavController().navigate(
+//            R.id.action_charactersFragment_to_characterDetailFragment,
+//            bundleOf("id" to bookingId)
+//        )
+        getNavController().navigate(R.id.action_flightSelectionFragment_to_seatSelectionFragment,
+            bundleOf("flight" to JsonUtils.toJsonString(flight)))
     }
 }

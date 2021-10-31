@@ -1,4 +1,4 @@
-package com.moriswala.booking.data.remote
+package com.moriswala.booking.data.remote.booking
 
 import com.moriswala.booking.data.entities.Booking
 import retrofit2.Response

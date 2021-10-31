@@ -55,11 +55,15 @@
             app:exitAnim="@anim/exit"
             app:launchSingleTop="true"
             app:popEnterAnim="@anim/pop_enter"
-            app:popExitAnim="@anim/pop_exit"/>
+            app:popExitAnim="@anim/pop_exit">
+            <argument
+                android:name="flight"
+                app:argType="string"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/flightSelectionFragment"
-        android:name="com.moriswala.booking.ui.newticket.FlightSelectionFragment"
+        android:name="com.moriswala.booking.ui.newticket.flightselection.FlightSelectionFragment"
         android:label="FlightSelectionFragment"
         tools:layout="@layout/fragment_flight_selection" >
     <action

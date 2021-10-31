@@ -1,5 +1,6 @@
-package com.moriswala.booking.data.remote
+package com.moriswala.booking.data.remote.booking
 
+import com.moriswala.booking.data.remote.BaseDataSource
 import javax.inject.Inject
 
 class BookingRemoteDataSource @Inject constructor(

@@ -92,6 +92,8 @@
                                 android:hint="Destination"
                                 android:inputType="text"
                                 android:maxLines="1"
+                                android:text="Riyadh (RUH)"
+                                android:enabled="false"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -110,6 +112,8 @@
                                 android:fontFamily="@font/calibri"
                                 android:hint="From"
                                 android:inputType="text"
+                                android:text="Jeddah (JED)"
+                                android:enabled="false"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
@@ -129,6 +133,8 @@
                                 android:fontFamily="@font/calibri"
                                 android:hint="Select Date"
                                 android:inputType="date"
+                                android:text="21/11/2021"
+                                android:enabled="false"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
