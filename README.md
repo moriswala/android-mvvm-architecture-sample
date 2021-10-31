@@ -1,6 +1,7 @@
 # Booking - Android Architecture Sample
 
-A simple app that loads information from REST API to show one approach to using some of the best practices in Android Development. Including:  
+A simple app that loads information from REST API to show one approach to using some of the best practices in Android Development. Including:
+ * Google Auth
  * ViewModel
  * LiveData
  * Hilt (for dependency injection)
