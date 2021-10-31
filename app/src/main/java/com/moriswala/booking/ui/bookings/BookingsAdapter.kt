@@ -47,6 +47,7 @@ class BookingViewHolder(private val itemBinding: ItemBookingBinding, private val
         this.booking = item
         itemBinding.name.text = item.owner
         itemBinding.fromTo.text = """${item.depart_city_id} - ${item.arrival_city_id}"""
+        itemBinding.status.text = if(booking.status==1) "APPROVED" else "PENDING"
         Glide.with(itemBinding.root)
             .load(item.logo)
             .into(itemBinding.image)
