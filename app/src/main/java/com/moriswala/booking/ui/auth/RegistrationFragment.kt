@@ -68,8 +68,10 @@ class RegistrationFragment : BaseFragment() {
                 return@OnClickListener
             }
             binding.progressBar.visibility = View.VISIBLE
-            //create user
+            viewModel.auth().signOut()
+
             viewModel.auth().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(
                     OnCompleteListener<AuthResult?> { task ->
                         Toast.makeText(
                             requireContext(),
@@ -88,11 +90,11 @@ class RegistrationFragment : BaseFragment() {
                         } else {
                             gotoHomeFragment()
                         }
-                    }
+                    })
         })
     }
 
     private fun gotoHomeFragment() {
-        getNavController().navigate(R.id.action_loginFragment_to_charactersFragment)
+        getNavController().navigate(R.id.action_registrationFragment_to_charactersFragment)
     }
 }
