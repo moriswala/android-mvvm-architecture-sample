@@ -9,3 +9,5 @@ A simple app that loads information from REST API to show one approach to using 
  * Retrofit
  * Room
  * Navigation
+ 
+ <img src="https://github.com/moriswala/android-mvvm-architecture-sample/tree/master/media/intro.gif">
